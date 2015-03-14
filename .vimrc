@@ -36,16 +36,18 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Bling/vim-airline'
 Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-vividchalk'
-" Plugin 'flazz/vim-colorschemes'
 Plugin 'Shougo/neocomplcache.vim'
 Plugin 'jelera/vim-javascript-syntax' 
 Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/vimshell.vim'
-Plugin 'tomasr/molokai'
 Plugin 'tpope/vim-fugitive'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'Raimondi/delimitMate'
+" Colorschemes
+Plugin 'tpope/vim-vividchalk'
+Plugin 'tomasr/molokai'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -61,20 +63,25 @@ filetype plugin on
 
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
- 
+
 syntax on
 set t_Co=256 
 
-:set number
-:set cursorline
+colorscheme molokai
 
+set relativenumber 
+set number   
+set cursorline
+
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
 set ts=4 sts=4 sw=4 noexpandtab
 
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
+set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 set ttimeoutlen=50
 let g:airline_powerline_fonts = 1
@@ -84,10 +91,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-:colorscheme vividchalk
-
-map  <C-l> :tabnext<CR>
-map  <C-h> :tabprevious<CR>
+map <leader>l :set list!<CR>
+map <C-l> :tabnext<CR>
+map <C-h> :tabprevious<CR>
 
 " silent! nmap <C-p> :NERDTreeToggle<CR>
 " silent! map <F3> :NERDTreeFind<CR>
