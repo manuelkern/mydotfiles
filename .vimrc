@@ -45,6 +45,8 @@ Plugin 'Shougo/vimshell.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Raimondi/delimitMate'
+Plugin 'rstacruz/sparkup'
+Plugin 'Hydrotoast/vim-gss'
 " Colorschemes
 Plugin 'tpope/vim-vividchalk'
 Plugin 'tomasr/molokai'
@@ -75,7 +77,7 @@ set cursorline
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
-set ts=4 sts=4 sw=4 noexpandtab
+set ts=2 sts=2 sw=2 noexpandtab
 
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set statusline+=%#warningmsg#
